@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHero Tube</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <div
+            class="flex flex-col md:flex-row lg:flex-row  justify-around items-center gap-4 md:justify-between lg:justify-between mx-12 my-4">
+            <div>
+                <img src="Logo.png" alt="">
+            </div>
+            <div>
+                <button id="sort" class="btn bg-[#25252533] rounded-md">Sort by view </button>
+            </div>
+            <div>
+                <a class="btn text-white bg-[#FF1F3D] rounded-md" href="blog.html">Blog</a>
+            </div>
+
+        </div>
+        <hr class="mx-12">
+    </header>
+    <main>
+       <div class="tab-container mt-8">
+        <div class="p-5 mx-64 m-auto text-center flex justify-center gap-5" id="tab-container">
+          </div>
+       </div>
+
+        <section>
+            <div id="videos-container" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 px-14  ">
+            </div>
+        </section>
+
+        <section >
+            <div id="no-data-section" class="flex flex-col justify-center items-center ml-16 mt-32">
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/videos.js"></script>
+</body>
+
+</html>
