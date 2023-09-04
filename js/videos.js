@@ -13,7 +13,6 @@ const handleCategory = async () => {
    });
 };
 
-
 const handleLoadVideos = async (categoryId) => {
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
     const data = await response.json();
@@ -71,16 +70,25 @@ const hours = Math.floor(video.others.posted_date / 3600);
     else{ 
          console.log("continue work")
      }
+
+     document.getElementById('sort').addEventListener('click', function () {
+      console.log(loadData);
+      videosContainer.textContent= '';
+      dataByViews();
+    });
    
 };
-    
+
+const dataByViews = () => {
+   fetch(`https://openapi.programming-hero.com/api/videos/category/1000`)
+       .then(response => response.json())
+       .then(data => {
+           const viewsArray = data.data.map(item => item.others.views);
+           const sortedViews = viewsArray.sort((a, b) => parseInt(b) - parseInt(a));
+           console.log(sortedViews);
+           handleLoadVideos(sortedViews)
+       })
+};
+
 handleCategory();
 handleLoadVideos(1000);
-
-
-
-
-
-  
-
-
